@@ -208,7 +208,7 @@
 
                             <div class="col-lg-6 p-b-30 p-t-18">
                                     <div class="wrap-pic-booking size2 bo-rad-10 hov-img-zoom m-l-r-auto">
-                                            <img src="images/booking-03.jpg" alt="IMG-OUR">
+                                            <img src="images/booking-01.jpg" alt="IMG-OUR">
                                     </div>
                             </div>
                     </div>
@@ -221,8 +221,8 @@
                                 <tr>
                                     <th>Photo</th>
                                     <th>Nom</th>
-                                    <th>Pourboire</th>
                                     <th>Date</th>
+                                    <th>Pourboire</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -240,8 +240,8 @@
                                             </div>
                                         </td>
                                         <td><% out.println(liste[i].getNom()); %></td>
-                                        <td><%out.println(liste[i].getPourboire()); %></td>
                                         <td><%out.println(liste[i].getDaty()); %></td>
+                                        <td><%out.println((int) liste[i].getPourboire()+" Ariary"); %></td>
                                     </tr>
                                 <% } %>
                             </tbody>

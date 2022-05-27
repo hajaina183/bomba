@@ -17,7 +17,7 @@
             <div class="container">
               <div class="left">
                 <div class="login">Login</div>
-                <div class="eula"><img src="images/icons/logo.png" data-logofixed="images/icons/logo2.png"></div>
+                <div class="eula">Bomba resto</div>
               </div>
               <div class="right">
                 <svg viewBox="0 0 320 300">
