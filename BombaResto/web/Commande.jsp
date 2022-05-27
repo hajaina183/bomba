@@ -1,3 +1,15 @@
+<%-- 
+    Document   : Commande
+    Created on : 27 mai 2022, 15:21:05
+    Author     : jayks
+--%>
+
+<%@page import="classe.NTable"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    NTable[] listeTables = (NTable[]) request.getAttribute("listeTables");
+    int grade = (Integer) request.getAttribute("grade");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +53,7 @@
 				<div class="wrap_header trans-0-3">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="acceuil.html">
+						<a href="Commande.jsp">
 							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
 						</a>
 					</div>
@@ -51,30 +63,15 @@
 						<nav class="menu">
 							<ul class="main_menu">
 								<li>
-									<a href="acceuil.html">Accueil</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListePlat">Menu</a>
 								</li>
 
 								<li>
-									<a href="menu.html">Menu</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListeServeur">Pourboire_serveur</a>
 								</li>
 
 								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
-
-								<li>
-									<a href="serveur.html">Serveur</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-								<li>
-									<a href="Login.html">Admin</a>
+									<a href="http://localhost:8080/BombaResto/TraitementLivraison">Plat_livrer</a>
 								</li>
 							</ul>
 						</nav>
@@ -82,10 +79,7 @@
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
+						<a href="http://localhost:8080/BombaResto/TraitementDeconnexion"><i class="fa fa-sign-out m-l-21" aria-hidden="true"></i></a>
 						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
 					</div>
 				</div>
@@ -101,34 +95,15 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="acceuil.html" class="txt19">Home</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="txt19">Menu</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListeServeur" class="txt19">Pourboire_serveur</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
+				<a href="http://localhost:8080/BombaResto/TraitementLivraison" class="txt19">Plat_livrer</a>
 			</li>
 		</ul>
 
@@ -187,7 +162,7 @@
 				<div class="item-slick1 item1-slick1" style="background-image: url(images/slide1-01.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
@@ -196,8 +171,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -206,7 +181,7 @@
 				<div class="item-slick1 item2-slick1" style="background-image: url(images/master-slides-02.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
@@ -215,8 +190,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlatmenu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -225,7 +200,7 @@
 				<div class="item-slick1 item3-slick1" style="background-image: url(images/master-slides-01.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
@@ -234,8 +209,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -388,7 +363,7 @@
 							</h3>
 						</div>
 	
-						<form action="menu.html" class="wrap-form-booking" >
+						<form action="http://localhost:8080/BombaResto/TraitInsertCommande" class="wrap-form-booking" >
 							<div class="row">
 								<div class="col-md-6">
 									<!-- Date -->
@@ -470,8 +445,13 @@
 										Table
 									</span>
 	
-									<div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
-										<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="table" placeholder="table">
+									<div class="wrap-inputpersonne size12 bo2 bo-rad-10 m-t-3 m-b-23">
+										<!-- Select2 -->
+                                                                                <select class="selection-1" name="table">
+                                                                                    <% for(int i = 0; i <listeTables.length ; i++) { %>
+											<option value = "<% out.println(listeTables[i].getId_table()); %>"><%  out.println(listeTables[i].getId_table()); %>
+                                                                                    <% } %>
+										</select>
 									</div>
 	
 									
@@ -519,7 +499,7 @@
 								<img src="images/our-menu-01.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size4">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size4">
 									Déjeuner
 								</a>
 							</div>
@@ -531,7 +511,7 @@
 								<img src="images/our-menu-05.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size5">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size5">
 									Dîner
 								</a>
 							</div>
@@ -543,7 +523,7 @@
 								<img src="images/our-menu-13.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size6">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size6">
 									Happy Hour
 								</a>
 							</div>
@@ -559,7 +539,7 @@
 								<img src="images/our-menu-08.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size7">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size7">
 									Boissons
 								</a>
 							</div>
@@ -571,7 +551,7 @@
 								<img src="images/our-menu-10.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size8">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size8">
 									Entrées
 								</a>
 							</div>
@@ -583,7 +563,7 @@
 								<img src="images/our-menu-16.jpg" alt="IMG-MENU">
 
 								<!-- Button2 -->
-								<a href="menu.html" class="btn2 flex-c-m txt5 ab-c-m size9">
+								<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn2 flex-c-m txt5 ab-c-m size9">
 									Dessert
 								</a>
 							</div>
@@ -1326,3 +1306,4 @@
 
 </body>
 </html>
+

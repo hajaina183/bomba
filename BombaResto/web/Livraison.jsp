@@ -1,3 +1,20 @@
+<%-- 
+    Document   : Livraison
+    Created on : 27 mai 2022, 21:43:06
+    Author     : jayks
+--%>
+
+<%@page import="classe.Alls"%>
+<%@page import="java.util.Vector"%>
+<%@page import="classe.NTable"%>
+<%@page import="classe.Produit"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    Produit[] listeProduit = (Produit[]) request.getAttribute("listeProduit");
+    NTable[] listeNTable = (NTable[]) request.getAttribute("listeNTable");
+    Vector<Alls> listeAll = (Vector<Alls>) request.getAttribute("listeAll");
+    int grade = (Integer) request.getAttribute("grade");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +60,7 @@
 				<div class="wrap_header trans-0-3">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="acceuil.html">
+						<a href="commande.html">
 							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
 						</a>
 					</div>
@@ -53,31 +70,15 @@
 						<nav class="menu">
 							<ul class="main_menu">
 								<li>
-									<a href="acceuil.html">Accueil</a>
+									<a href="http://localhost:8080/BombaResto/TraitementCommande">Commande</a>
 								</li>
 
 								<li>
-									<a href="menu.html">Menu</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListePlat">Menu</a>
 								</li>
 
 								<li>
-									<a href="reservation.html">Réservation</a>
-								</li>
-
-								<li>
-									<a href="serveur.html">Serveur</a>
-								</li>
-
-								<li>
-									<a href="about.html">About</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
+									<a href="reservation.html">Plat_livrer</a>
 								</li>
 							</ul>
 						</nav>
@@ -85,10 +86,7 @@
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
+                                                <a href="http://localhost:8080/BombaResto/TraitementDeconnexion"><i class="fa fa-sign-out m-l-21" aria-hidden="true"></i></a>
 						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
 					</div>
 				</div>
@@ -104,34 +102,15 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="acceuil.html" class="txt19">Home</a>
+				<a href="http://localhost:8080/BombaResto/TraitementCommande" class="txt19">Commande</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="txt19">Menu</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
+				<a href="gallery.html" class="txt19">Plat_livrer</a>
 			</li>
 		</ul>
 
@@ -183,68 +162,49 @@
 		</div>
 	</aside>
 
-
 	<!-- Title Page -->
 	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/header-menu-01.jpg);">
 		<h2 class="tit6 t-center">
-			Serveur chez Bomba
+			Livraison chez Bomba
 		</h2>
 	</section>
 
+        <section class="section-booking bg1-pattern p-t-100 p-b-110">
+            <div class="container">
+                <div class="t-center">
+                    <span class="tit2 t-center">
+                            Liste des plats à livrer
+                    </span>
 
+                    <h3 class="tit3 t-center m-b-35 m-t-2">
+                            Livraison
+                    </h3>
+                </div>
+                <div class="row p-t-108 p-b-70">
+                    <div class="col-md-8 col-lg-6 m-l-r-auto">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Nom du plat</th>
+                                    <td>N°Table</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (int i = 0; i < listeAll.size(); i++) { %>
+                                    <tr>
+                                        <td><% out.println(listeAll.get(i).getNom_produit()); %></td>
+                                        <td><% out.println(listeAll.get(i).getId_table()); %></td>
+                                        <td><a href="http://localhost:8080/BombaResto/TraitementLivrer?id=<% out.println(listeAll.get(i).getId_detailsCommande());%>">Livrer</a></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	<!-- Gallery -->
-	<section class="section-lunch bgwhite">
-		
-
-		<div class="container">
-			<div class="row p-t-108 p-b-70">
-				<div class="col-md-8 col-lg-6 m-l-r-auto">
-					<!-- Block3 -->
-					<table class="table table-borderless">
-						<thead>
-						   <tr>
-							  <th>Photo</th>
-							  <th>Nom</th>
-							  <th>Pourboire</th>
-						   </tr>
-						</thead>
-						<tbody>
-						   <tr>
-							  <td><div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-								<a href="#"><img src="images/avatar-01.jpg" alt="IMG-MENU"></a>
-							</div></td>
-							  <td>Koto</td>
-							  <td>Pourboire</td>
-						   </tr>
-						   <tr>
-							  <td><div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-								<a href="#"><img src="images/avatar-02.jpg" alt="IMG-MENU"></a>
-							</div></td>
-							  <td>Bema</td>
-							  <td>Pourboire</td>
-						   </tr>
-						   <tr>
-							  <td>	<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-								<a href="#"><img src="images/avatar-03.jpg" alt="IMG-MENU"></a>
-							</div></td>
-							  <td>Sarah</td>
-							  <td>Pourboire<td>
-						   </tr>
-						</tbody>
-					 </table>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	
-	
-
-		
 	<!-- Footer -->
 	<footer class="bg1">
 		<div class="container p-t-40 p-b-70">
@@ -406,3 +366,5 @@
 
 </body>
 </html>
+
+

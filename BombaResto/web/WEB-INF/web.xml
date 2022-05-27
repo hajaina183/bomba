@@ -8,6 +8,38 @@
         <servlet-name>TraitementCommande</servlet-name>
         <servlet-class>servlet.TraitementCommande</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TraitInsertCommande</servlet-name>
+        <servlet-class>servlet.TraitInsertCommande</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementValider</servlet-name>
+        <servlet-class>servlet.TraitementValider</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementInsertDetailsCommande</servlet-name>
+        <servlet-class>servlet.TraitementInsertDetailsCommande</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementListePlat</servlet-name>
+        <servlet-class>servlet.TraitementListePlat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementListeServeur</servlet-name>
+        <servlet-class>servlet.TraitementListeServeur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementLivraison</servlet-name>
+        <servlet-class>servlet.TraitementLivraison</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementLivrer</servlet-name>
+        <servlet-class>servlet.TraitementLivrer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementDeconnexion</servlet-name>
+        <servlet-class>servlet.TraitementDeconnexion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TraietementLogin</servlet-name>
         <url-pattern>/TraietementLogin</url-pattern>
@@ -15,6 +47,38 @@
     <servlet-mapping>
         <servlet-name>TraitementCommande</servlet-name>
         <url-pattern>/TraitementCommande</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitInsertCommande</servlet-name>
+        <url-pattern>/TraitInsertCommande</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementValider</servlet-name>
+        <url-pattern>/TraitementValider</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementInsertDetailsCommande</servlet-name>
+        <url-pattern>/TraitementInsertDetailsCommande</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementListePlat</servlet-name>
+        <url-pattern>/TraitementListePlat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementListeServeur</servlet-name>
+        <url-pattern>/TraitementListeServeur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementLivraison</servlet-name>
+        <url-pattern>/TraitementLivraison</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementLivrer</servlet-name>
+        <url-pattern>/TraitementLivrer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementDeconnexion</servlet-name>
+        <url-pattern>/TraitementDeconnexion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
