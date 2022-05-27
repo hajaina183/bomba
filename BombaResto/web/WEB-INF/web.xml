@@ -4,9 +4,17 @@
         <servlet-name>TraietementLogin</servlet-name>
         <servlet-class>servlet.TraietementLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TraitementCommande</servlet-name>
+        <servlet-class>servlet.TraitementCommande</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TraietementLogin</servlet-name>
         <url-pattern>/TraietementLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementCommande</servlet-name>
+        <url-pattern>/TraitementCommande</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
