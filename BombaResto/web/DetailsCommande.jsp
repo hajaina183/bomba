@@ -1,3 +1,27 @@
+<%-- 
+    Document   : DetailsCommande
+    Created on : 27 mai 2022, 16:27:01
+    Author     : jayks
+--%>
+
+<%@page import="classe.Alls"%>
+<%@page import="classe.Serveur"%>
+<%@page import="classe.Produit"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    Produit[] listeProduit = (Produit[]) request.getAttribute("listeProduit");
+    Serveur[] listeServeur = (Serveur[]) request.getAttribute("listeServeur");
+    Alls[] listeAlls = (Alls[]) request.getAttribute("listeAll");
+    int grade = (Integer) request.getAttribute("grade");
+    if(request.getAttribute("proposition") != null) { 
+        Double d = (Double) request.getAttribute("proposition");%>
+        <script>
+            var s="<%=(int) Math.round(d)%>"; 
+            alert("Vous ne pouvez pas effectuer cette commande. \n Quantité proposé : "+s);
+        </script>
+        
+
+    <% } %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +53,9 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+        
 <!--===============================================================================================-->
 </head>
-< class="animsition">
 
 	<!-- Header -->
 	<header>
@@ -51,30 +75,15 @@
 						<nav class="menu">
 							<ul class="main_menu">
 								<li>
-									<a href="commande.html">Home</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListePlat">Menu</a>
 								</li>
 
 								<li>
-									<a href="menu.html">Menu</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListeServeur">Pourboire_serveur</a>
 								</li>
 
 								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
-
-								<li>
-									<a href="serveur.html">Gallery</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-								<li>
-									<a href="Login.html">Admin</a>
+									<a href="http://localhost:8080/BombaResto/TraitementLivraison">Plat_livrer</a>
 								</li>
 							</ul>
 						</nav>
@@ -82,9 +91,7 @@
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
+						<a href="http://localhost:8080/BombaResto/TraitementDeconnexion"><i class="fa fa-sign-out m-l-21" aria-hidden="true"></i></a>
 
 						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
 					</div>
@@ -101,34 +108,15 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="commande.html" class="txt19">Home</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="txt19">Menu</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListeServeur" class="txt19">Pourboire_serveur</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
+				<a href="http://localhost:8080/BombaResto/TraitementLivraison" class="txt19">Plat_livrer</a>
 			</li>
 		</ul>
 
@@ -187,7 +175,7 @@
 				<div class="item-slick1 item1-slick1" style="background-image: url(images/slide1-01.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
@@ -196,8 +184,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -206,7 +194,7 @@
 				<div class="item-slick1 item2-slick1" style="background-image: url(images/master-slides-02.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
@@ -215,8 +203,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -225,7 +213,7 @@
 				<div class="item-slick1 item3-slick1" style="background-image: url(images/master-slides-01.jpg);">
 					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Welcome to
+							Bienvenue chez
 						</span>
 
 						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
@@ -234,8 +222,8 @@
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
 							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
+							<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="btn1 flex-c-m size1 txt3 trans-0-4">
+								Voir Menu
 							</a>
 						</div>
 					</div>
@@ -246,35 +234,107 @@
 			<div class="wrap-slick1-dots"></div>
 		</div>
 	</section>
+        <section class="section-booking bg1-pattern p-t-100 p-b-110">
+            <div class="container">
+                    <div class="row">
+                            <div class="col-lg-6 p-b-30">
+                                    <div class="t-center">
+                                            <span class="tit2 t-center">
+                                                    Enregistrer votre commande
+                                            </span>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom du plat</th>
-                <td>Quantité</td>
-                <td>Prix</td>
-            </tr>
-        </thead>
-        <tbody>
-           
-            <tr class="table">
-                <td >
-                    <a href="#">Glace</a>
-                </td>
-                <td >
-                  5
-                </td>
-                <td>
-                  20000Ariary
-                </td>
-                </tr>
-            
-            <tr>
-                Somme de votre addition:80000Ariary
-            </tr>
-        </tbody>
-      </table>
-                
+                                            <h3 class="tit3 t-center m-b-35 m-t-2">
+                                                    Plat
+                                            </h3>
+                                    </div>
+
+                                    <form action="http://localhost:8080/BombaResto/TraitementInsertDetailsCommande" class="wrap-form-booking" >
+                                            <div class="row">
+                                                    <div class="col-md-12">
+                                                            <!-- Produit -->
+                                                            <span class="txt9">
+                                                                    Serveur
+                                                            </span>
+
+                                                            <div class="wrap-inputtime size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                                                    <!-- Select2 -->
+                                                                    <select class="selection-1" name="serveur">
+                                                                        <% for(int i = 0; i <listeServeur.length ; i++) { %>
+                                                                            <option value = "<% out.println(listeServeur[i].getId_serveur()); %>"><%  out.println(listeServeur[i].getNom()); %>
+                                                                      <% } %>
+                                                                    </select>
+                                                            </div>
+
+                                                            <!-- personne -->
+                                                            <span class="txt9">
+                                                                    Produit
+                                                            </span>
+
+                                                            <div class="wrap-inputpersonne size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                                                    <!-- Select2 -->
+                                                                    <select class="selection-1" name="produit">
+                                                                        <% for(int i = 0; i <listeProduit.length ; i++) { %>
+                                                                            <option value = "<% out.println(listeProduit[i].getId_produit()); %>"><%  out.println(listeProduit[i].getNom_produit()); %>
+                                                                      <% } %> 
+                                                                    </select>
+                                                            </div>
+                                                            <!--  -->
+                                                            <span class="txt9">
+                                                                    Quantité
+                                                            </span>
+
+                                                            <div class="wrap-inputdate pos-relative txt10 size12 bo2 bo-rad-10 m-t-3 m-b-23">
+                                                                    <input class="bo-rad-10 sizefull txt10 p-l-20" type="number" name="qtt">
+                                                            </div>
+                                                    </div>
+                                            </div>
+
+                                            <div class="wrap-btn-booking flex-c-m m-t-6">
+                                                    <!-- Button3 -->
+                                                    <input type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4" value="Commander">
+                                            </div>
+                                    </form>
+                            </div>
+
+                            <div class="col-lg-6 p-b-30 p-t-18">
+                                    <div class="wrap-pic-booking size2 bo-rad-10 hov-img-zoom m-l-r-auto">
+                                            <img src="images/booking-02.jpg" alt="IMG-OUR">
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+    </section>
+    <section class="section-booking bg1-pattern p-t-100 p-b-110">
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom du plat</th>
+                            <td>Quantité</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (int i = 0; i < listeAlls.length; i++) { %>
+                        <tr class="table">
+                            <td >
+                                <% out.println(listeAlls[i].getNom_produit()); %>
+                            </td>
+                            <td>
+                              <% out.println(listeAlls[i].getQuantite()); %>
+                            </td>
+                            </tr>
+                        <% }%>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <form action = "http://localhost:8080/BombaResto/TraitementValider" method="get">
+                    <button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">Valider</button>
+                </form>
+            </div>
+        </div>   
+    </section>                                                                
 
 	<!-- Footer -->
 	<footer class="bg1">
@@ -501,3 +561,4 @@
 
 </body>
 </html>
+

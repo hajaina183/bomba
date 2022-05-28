@@ -1,9 +1,30 @@
+<%-- 
+    Document   : Menu
+    Created on : 27 mai 2022, 16:16:39
+    Author     : jayks
+--%>
+
+<%@page import="classe.NTable"%>
+<%@page import="classe.Categorie"%>
+<%@page import="classe.Produit"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    Produit[] listeProduit = (Produit[]) request.getAttribute("listeProduit");
+    Produit[] entree = (Produit[]) request.getAttribute("entree");
+    Produit[] resistance = (Produit[]) request.getAttribute("resistance");
+    Produit[] dessert = (Produit[]) request.getAttribute("dessert");
+    Categorie[] listeCategorie = (Categorie[]) request.getAttribute("listeCategorie");
+    NTable[] listeNTable = (NTable[]) request.getAttribute("listeNTable");
+    int grade = (Integer) request.getAttribute("grade");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin</title>
+	<title>Menu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -31,7 +52,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-< class="animsition">
+<body class="animsition">
 
 	<!-- Header -->
 	<header>
@@ -51,30 +72,15 @@
 						<nav class="menu">
 							<ul class="main_menu">
 								<li>
-									<a href="commande.html">Home</a>
+									<a href="http://localhost:8080/BombaResto/TraitementCommande">Commande</a>
 								</li>
 
 								<li>
-									<a href="menu.html">Menu</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListeServeur">Pourboire_serveur</a>
 								</li>
 
 								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
-
-								<li>
-									<a href="serveur.html">Gallery</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-								<li>
-									<a href="Login.html">Admin</a>
+									<a href="http://localhost:8080/BombaResto/TraitementLivraison">Plat_livrer</a>
 								</li>
 							</ul>
 						</nav>
@@ -82,9 +88,7 @@
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
+						<a href="http://localhost:8080/BombaResto/TraitementDeconnexion"><i class="fa fa-sign-out m-l-21" aria-hidden="true"></i></a>
 
 						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
 					</div>
@@ -101,34 +105,15 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="commande.html" class="txt19">Home</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="txt19">Menu</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListeServeur" class="txt19">Pourboire_serveur</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
+				<a href="http://localhost:8080/BombaResto/TraitementLivraison" class="txt19">Plat_livrer</a>
 			</li>
 		</ul>
 
@@ -180,101 +165,159 @@
 		</div>
 	</aside>
 
-	<!-- Slide1 -->
-	<section class="section-slide">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<div class="item-slick1 item1-slick1" style="background-image: url(images/slide1-01.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Welcome to
-						</span>
 
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-							Bomba Resto
-						</h2>
+	<!-- Title Page -->
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/bg-title-page-01.jpg);">
+		<h2 class="tit6 t-center">
+			Menu Bomba Resto
+		</h2>
+	</section>
 
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
+
+	<!-- Main menu -->
+	<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
+					<div class="wrap-item-mainmenu p-b-22">
+						<h3 class="tit-mainmenu tit10 p-b-25">
+							Liste des plats
+						</h3>
+
+						<% for (int i = 0; i < listeProduit.length; i++) { %>
+                                                    <div class="item-mainmenu m-b-36">
+                                                            <div class="flex-w flex-b m-b-3">
+                                                                    <a href="#" class="name-item-mainmenu txt21">
+                                                                        <% out.println(listeProduit[i].getNom_produit()); %>
+                                                                    </a>
+
+                                                                    <div class="line-item-mainmenu bg3-pattern"></div>
+
+                                                                    <div class="price-item-mainmenu txt22">
+                                                                            <% out.println((int) listeProduit[i].getPrix_produit() + " Ariary"); %>
+                                                                    </div>
+                                                            </div>
+
+                                                            <span class="info-item-mainmenu txt23">
+                                                                    Sed fermentum eros vitae eros
+                                                            </span>
+                                                    </div>
+                                                <% } %>
 					</div>
 				</div>
-
-				<div class="item-slick1 item2-slick1" style="background-image: url(images/master-slides-02.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Welcome to
-						</span>
-
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-							Bomba Resto
-						</h2>
-
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1 item3-slick1" style="background-image: url(images/master-slides-01.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Welcome to
-						</span>
-
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-							Bomba Resto
-						</h2>
-
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
-					</div>
-				</div>
-
 			</div>
-
-			<div class="wrap-slick1-dots"></div>
 		</div>
 	</section>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nom du plat</th>
-                <td>Quantité</td>
-                <td>Prix</td>
-            </tr>
-        </thead>
-        <tbody>
-           
-            <tr class="table">
-                <td >
-                    <a href="#">Glace</a>
-                </td>
-                <td >
-                  5
-                </td>
-                <td>
-                  20000Ariary
-                </td>
-                </tr>
-            
-            <tr>
-                Somme de votre addition:80000Ariary
-            </tr>
-        </tbody>
-      </table>
-                
+
+	<!-- Entrée -->
+	<section class="section-lunch bgwhite">
+		<div class="header-lunch parallax0 parallax100" style="background-image: url(images/our-menu-10.jpg);">
+			<div class="bg1-overlay t-center p-t-170 p-b-165">
+				<h2 class="tit4 t-center">
+					Entrée
+				</h2>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row p-t-108 p-b-70">
+				<div class="col-md-8 col-lg-6 m-l-r-auto">
+					<% for (int i = 0; i < entree.length; i++) { %>
+                                            <div class="blo3 flex-w flex-col-l-sm m-b-30">
+                                                    <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                                                            <a href="#"><img src="<% out.println("images/plat/"+entree[i].getImages()+".jpg"); %>" alt="IMG-MENU"></a>
+                                                    </div>
+
+                                                    <div class="text-blo3 size21 flex-col-l-m">
+                                                            <a href="#" class="txt21 m-b-3">
+                                                                    <% out.println(entree[i].getNom_produit()); %>
+                                                            </a>
+
+                                                            <span class="txt22 m-t-20">
+                                                                    <% out.println((int) entree[i].getPrix_produit()+ " Ariary"); %>
+                                                            </span>
+                                                    </div>
+                                            </div>
+
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Résistance -->
+	<section class="section-dinner bgwhite">
+		<div class="header-dinner parallax0 parallax100" style="background-image: url(images/header-menu-02.jpg);">
+			<div class="bg1-overlay t-center p-t-170 p-b-165">
+				<h2 class="tit4 t-center">
+					Résistance
+				</h2>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row p-t-108 p-b-70">
+				<div class="col-md-8 col-lg-6 m-l-r-auto">
+					<% for (int i = 0; i < resistance.length; i++) { %>
+                                            <div class="blo3 flex-w flex-col-l-sm m-b-30">
+                                                    <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                                                            <a href="#"><img src="<% out.println("images/plat/"+resistance[i].getImages()+".jpg"); %>" alt="IMG-MENU"></a>
+                                                    </div>
+
+                                                    <div class="text-blo3 size21 flex-col-l-m">
+                                                            <a href="#" class="txt21 m-b-3">
+                                                                    <% out.println(resistance[i].getNom_produit()); %>
+                                                            </a>
+
+                                                            <span class="txt22 m-t-20">
+                                                                    <% out.println((int) resistance[i].getPrix_produit()+ " Ariary"); %>
+                                                            </span>
+                                                    </div>
+                                            </div>
+
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</section>
+        
+        <!-- Dessert -->
+	<section class="section-lunch bgwhite">
+		<div class="header-lunch parallax0 parallax100" style="background-image: url(images/our-menu-19.jpg);">
+			<div class="bg1-overlay t-center p-t-170 p-b-165">
+				<h2 class="tit4 t-center">
+					Dessert
+				</h2>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row p-t-108 p-b-70">
+				<div class="col-md-8 col-lg-6 m-l-r-auto">
+					<% for (int i = 0; i < dessert.length; i++) { %>
+                                            <div class="blo3 flex-w flex-col-l-sm m-b-30">
+                                                    <div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
+                                                            <a href="#"><img src="<% out.println("images/plat/"+dessert[i].getImages()+".jpg"); %>" alt="IMG-MENU"></a>
+                                                    </div>
+
+                                                    <div class="text-blo3 size21 flex-col-l-m">
+                                                            <a href="#" class="txt21 m-b-3">
+                                                                    <% out.println(dessert[i].getNom_produit()); %>
+                                                            </a>
+
+                                                            <span class="txt22 m-t-20">
+                                                                    <% out.println((int) dessert[i].getPrix_produit()+ " Ariary"); %>
+                                                            </span>
+                                                    </div>
+                                            </div>
+
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Footer -->
 	<footer class="bg1">
@@ -451,25 +494,6 @@
 			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
 		</span>
 	</div>
-
-	<!-- Container Selection1 -->
-	<div id="dropDownSelect1"></div>
-
-	<!-- Modal Video 01-->
-	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
-
-		<div class="modal-dialog" role="document" data-dismiss="modal">
-			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
-
-			<div class="wrap-video-mo-01">
-				<div class="w-full wrap-pic-w op-0-0"><img src="images/icons/video-16-9.jpg" alt="IMG"></div>
-				<div class="video-mo-01">
-					<iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 
 <!--===============================================================================================-->

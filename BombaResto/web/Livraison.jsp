@@ -1,9 +1,28 @@
+<%-- 
+    Document   : Livraison
+    Created on : 27 mai 2022, 21:43:06
+    Author     : jayks
+--%>
+
+<%@page import="classe.Alls"%>
+<%@page import="java.util.Vector"%>
+<%@page import="classe.NTable"%>
+<%@page import="classe.Produit"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    Produit[] listeProduit = (Produit[]) request.getAttribute("listeProduit");
+    NTable[] listeNTable = (NTable[]) request.getAttribute("listeNTable");
+    Vector<Alls> listeAll = (Vector<Alls>) request.getAttribute("listeAll");
+    int grade = (Integer) request.getAttribute("grade");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin</title>
+	<title>Serveur</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
@@ -41,7 +60,7 @@
 				<div class="wrap_header trans-0-3">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="acceuil.html">
+						<a href="commande.html">
 							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
 						</a>
 					</div>
@@ -51,30 +70,15 @@
 						<nav class="menu">
 							<ul class="main_menu">
 								<li>
-									<a href="acceuil.html">Home</a>
+									<a href="http://localhost:8080/BombaResto/TraitementCommande">Commande</a>
 								</li>
 
 								<li>
-									<a href="menu.html">Menu</a>
+									<a href="http://localhost:8080/BombaResto/TraitementListePlat">Menu</a>
 								</li>
 
 								<li>
-									<a href="reservation.html">Reservation</a>
-								</li>
-
-								<li>
-									<a href="serveur.html">Gallery</a>
-								</li>
-
-								<li>
-									<a href="blog.html">Blog</a>
-								</li>
-
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-								<li>
-									<a href="Login.html">Admin</a>
+									<a href="reservation.html">Plat_livrer</a>
 								</li>
 							</ul>
 						</nav>
@@ -82,10 +86,7 @@
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
-
+                                                <a href="http://localhost:8080/BombaResto/TraitementDeconnexion"><i class="fa fa-sign-out m-l-21" aria-hidden="true"></i></a>
 						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
 					</div>
 				</div>
@@ -101,34 +102,15 @@
 		<!-- - -->
 		<ul class="menu-sidebar p-t-95 p-b-70">
 			<li class="t-center m-b-13">
-				<a href="acceuil.html" class="txt19">Home</a>
+				<a href="http://localhost:8080/BombaResto/TraitementCommande" class="txt19">Commande</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="menu.html" class="txt19">Menu</a>
+				<a href="http://localhost:8080/BombaResto/TraitementListePlat" class="txt19">Menu</a>
 			</li>
 
 			<li class="t-center m-b-13">
-				<a href="gallery.html" class="txt19">Gallery</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="about.html" class="txt19">About</a>
-			</li>
-
-			<li class="t-center m-b-13">
-				<a href="blog.html" class="txt19">Blog</a>
-			</li>
-
-			<li class="t-center m-b-33">
-				<a href="contact.html" class="txt19">Contact</a>
-			</li>
-
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
+				<a href="gallery.html" class="txt19">Plat_livrer</a>
 			</li>
 		</ul>
 
@@ -180,150 +162,48 @@
 		</div>
 	</aside>
 
-	<!-- Slide1 -->
-	<section class="section-slide">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<div class="item-slick1 item1-slick1" style="background-image: url(images/slide1-01.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Welcome to
-						</span>
-
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-							Bomba Resto
-						</h2>
-
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1 item2-slick1" style="background-image: url(images/master-slides-02.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Welcome to
-						</span>
-
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-							Bomba Resto
-						</h2>
-
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="slideInUp">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1 item3-slick1" style="background-image: url(images/master-slides-01.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 txt1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Welcome to
-						</span>
-
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-							Bomba Resto
-						</h2>
-
-						<div class="wrap-btn-slide1 animated visible-false" data-appear="rotateIn">
-							<!-- Button1 -->
-							<a href="menu.html" class="btn1 flex-c-m size1 txt3 trans-0-4">
-								Look Menu
-							</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="wrap-slick1-dots"></div>
-		</div>
+	<!-- Title Page -->
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/header-menu-01.jpg);">
+		<h2 class="tit6 t-center">
+			Livraison chez Bomba
+		</h2>
 	</section>
 
-    <h1>Plats prêts à être livrés</h1>
-    <div class="row">
-        <div class = "col-md-3"></div>
-          <div>
-              <table class="table">
-        <thead>
-            <tr>
-                <th>Nom du plat</th>
-                <td>N°Table</td>
-                <td>Action</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="table">
-                <td >
-                   Soupe Tamatave
-                </td>
-                <td>
-                     2
-                </td>
-                <td>
-                    <a href="#">Livrer</a>
-                </td>
-                </tr>
-        </tbody>
-      </div>
-                <a class="nav-item nav-link active" href="Stock.html">Reste en stock <span class="sr-only"></span></a>
-                
-         
-                <a class="nav-item nav-link active" href="Caisse.html">Liste des plats non payer <span class="sr-only"></span></a>
-            
-                <a class="nav-item nav-link active" href="menu.html">Liste des plats <span class="sr-only"></span></a>
-                <a class="nav-item nav-link active" href="serveur.html">Liste des serveurs <span class="sr-only"></span></a>
-                <div class="dropdown">
-                    <form action="http://localhost:8080/Resto/TraitementNTable" method="get">
-                        <select name="nTable">
-                            <option value = "#">Numéro de table
-                           
-                                <option value = ""></option>
-                           
-                        </select>
-                        <input type="submit" value="recherche">
-                    </form>
-                </div>
-              </div>
-              </div>
-            </div>
-          </nav>
-        <h1>Plats prêts à être livrés</h1>
-        <div class="row">
-            <div class = "col-md-3"></div>
-              <div>
-                  <table class="table">
-            <thead>
-                <tr>
-                    <th>Nom du plat</th>
-                    <td>N°Table</td>
-                    <td>Action</td>
-                </tr>
-            </thead>
-            <tbody>
-              
-                <tr class="table">
-                    <td >
-                       Tsaramaso
-                    </td>
-                    <td>
-                         2
-                    </td>
-                    <td>
-                        <a href="#">Livrer</a>
-                    </td>
-                    </tr>
-                
-            </tbody>
-          </div>
+        <section class="section-booking bg1-pattern p-t-100 p-b-110">
+            <div class="container">
+                <div class="t-center">
+                    <span class="tit2 t-center">
+                            Liste des plats à livrer
+                    </span>
 
+                    <h3 class="tit3 t-center m-b-35 m-t-2">
+                            Livraison
+                    </h3>
+                </div>
+                <div class="row p-t-108 p-b-70">
+                    <div class="col-md-8 col-lg-6 m-l-r-auto">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Nom du plat</th>
+                                    <td>N°Table</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (int i = 0; i < listeAll.size(); i++) { %>
+                                    <tr>
+                                        <td><% out.println(listeAll.get(i).getNom_produit()); %></td>
+                                        <td><% out.println(listeAll.get(i).getId_table()); %></td>
+                                        <td><a href="http://localhost:8080/BombaResto/TraitementLivrer?id=<% out.println(listeAll.get(i).getId_detailsCommande());%>">Livrer</a></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 	<!-- Footer -->
 	<footer class="bg1">
@@ -418,59 +298,11 @@
 				<div class="col-sm-6 col-md-4 p-t-50">
 					<!-- - -->
 					<h4 class="txt13 m-b-38">
-						Gallery
+						Serveur chez Bomba
 					</h4>
 
 					<!-- Gallery footer -->
-					<div class="wrap-gallery-footer flex-w">
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-01.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-01.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-02.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-02.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-03.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-03.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-04.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-04.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-05.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-05.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-06.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-06.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-07.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-07.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-08.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-08.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-09.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-09.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-10.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-10.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-11.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-11.jpg" alt="GALLERY">
-						</a>
-
-						<a class="item-gallery-footer wrap-pic-w" href="images/photo-gallery-12.jpg" data-lightbox="gallery-footer">
-							<img src="images/photo-gallery-thumb-12.jpg" alt="GALLERY">
-						</a>
-					</div>
+					
 
 				</div>
 			</div>
@@ -501,24 +333,6 @@
 		</span>
 	</div>
 
-	<!-- Container Selection1 -->
-	<div id="dropDownSelect1"></div>
-
-	<!-- Modal Video 01-->
-	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
-
-		<div class="modal-dialog" role="document" data-dismiss="modal">
-			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
-
-			<div class="wrap-video-mo-01">
-				<div class="w-full wrap-pic-w op-0-0"><img src="images/icons/video-16-9.jpg" alt="IMG"></div>
-				<div class="video-mo-01">
-					<iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 
 <!--===============================================================================================-->
@@ -546,7 +360,11 @@
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
 </body>
 </html>
+
+
