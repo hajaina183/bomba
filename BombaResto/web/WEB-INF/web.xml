@@ -8,6 +8,7 @@
         <servlet-name>TraitementCommande</servlet-name>
         <servlet-class>servlet.TraitementCommande</servlet-class>
     </servlet>
+<<<<<<< HEAD
     <servlet>
 
         <servlet-name>TraitementListePayer</servlet-name>
@@ -65,6 +66,8 @@
         <servlet-class>servlet.TraitementDeconnexion</servlet-class>
 
     </servlet>
+=======
+>>>>>>> parent of b7105a2 (ito ary)
     <servlet-mapping>
         <servlet-name>TraietementLogin</servlet-name>
         <url-pattern>/TraietementLogin</url-pattern>
@@ -73,6 +76,7 @@
         <servlet-name>TraitementCommande</servlet-name>
         <url-pattern>/TraitementCommande</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
 
         <servlet-name>TraitementListePayer</servlet-name>
@@ -130,6 +134,8 @@
         <url-pattern>/TraitementDeconnexion</url-pattern>
 
     </servlet-mapping>
+=======
+>>>>>>> parent of b7105a2 (ito ary)
     <session-config>
         <session-timeout>
             30
