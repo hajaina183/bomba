@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/web/WEB-INF/web.xml</file>
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/web/Paiement.html</file>
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/src/java/servlet/TraietementLogin.java</file>
@@ -12,6 +13,32 @@
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/web/menu.html</file>
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/web/ListePayer.jsp</file>
             <file>file:/E:/S6/Md%20Baovola/bomba/bomba/BombaResto/src/java/servlet/TraitementListePayer.java</file>
+=======
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/ListeServeur.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementDeconnexion.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/Stock.html</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/images/icons/logo2.png</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/css/modal.css</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementValider.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitInsertCommande.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementListePlat.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/Cuisine.html</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/index.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/Commande.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementCommande.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementLivraison.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementListeServeur.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/Menu.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/classe/SimpleDb2ExcelExporter.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementLivrer.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/css/login.css</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraitementInsertDetailsCommande.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/js/login.js</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/DetailsCommande.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/src/java/servlet/TraietementLogin.java</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/Livraison.jsp</file>
+            <file>file:/D:/fianarana/s6/Mme%20Baovola/bomba/BombaResto/web/WEB-INF/web.xml</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
