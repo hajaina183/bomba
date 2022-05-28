@@ -8,6 +8,30 @@
         <servlet-name>TraitementCommande</servlet-name>
         <servlet-class>servlet.TraitementCommande</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TraitementListePayer</servlet-name>
+        <servlet-class>servlet.TraitementListePayer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementPrixRevient</servlet-name>
+        <servlet-class>servlet.TraitementPrixRevient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementIngredientConsommer</servlet-name>
+        <servlet-class>servlet.TraitementIngredientConsommer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementStock</servlet-name>
+        <servlet-class>servlet.TraitementStock</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementMontant</servlet-name>
+        <servlet-class>servlet.TraitementMontant</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TraitementSeuil</servlet-name>
+        <servlet-class>servlet.TraitementSeuil</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TraietementLogin</servlet-name>
         <url-pattern>/TraietementLogin</url-pattern>
@@ -15,6 +39,30 @@
     <servlet-mapping>
         <servlet-name>TraitementCommande</servlet-name>
         <url-pattern>/TraitementCommande</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementListePayer</servlet-name>
+        <url-pattern>/TraitementListePayer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementPrixRevient</servlet-name>
+        <url-pattern>/TraitementPrixRevient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementIngredientConsommer</servlet-name>
+        <url-pattern>/TraitementIngredientConsommer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementStock</servlet-name>
+        <url-pattern>/TraitementStock</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementMontant</servlet-name>
+        <url-pattern>/TraitementMontant</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TraitementSeuil</servlet-name>
+        <url-pattern>/TraitementSeuil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
